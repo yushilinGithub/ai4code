@@ -104,14 +104,14 @@ def generate_triplet(df, mode='train'):
             for cid, label in zip(df_tmp_code_cell_id, labels):
                 count += 1
                 if label==1:
-                    triplets.append( [cell_id, cid, label] )
+                    triplets.append( [cell_id, cid, label] )  #only add positive 
                 # triplets.append( [cid, cell_id, label] )
                 elif mode == 'test':
                     triplets.append( [cell_id, cid, label] )
-                # triplets.append( [cid, cell_id, label] )
-                elif random_drop[count%10000]:
-                    triplets.append( [cell_id, cid, label] )
-                # triplets.append( [cid, cell_id, label] )
+                # # triplets.append( [cid, cell_id, label] )
+                # elif random_drop[count%10000]:
+                #     triplets.append( [cell_id, cid, label] )
+                # # triplets.append( [cid, cell_id, label] )
         
     return triplets
 

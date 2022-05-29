@@ -11,7 +11,10 @@ class Config:
     VALID_BS = 16
     #MODEL_NAME = 'bert-large-uncased'
     MODEL_NAME = "distilbert-base-uncased"
+    CODE_MODEL_NAME = "microsoft/codebert-base"
     data_dir = Path('D:\\workspace\\kaggle\\data\\AI4Code')
     #TOKENIZER = transformers.BertTokenizer.from_pretrained(MODEL_NAME, do_lower_case=True)
     TOKENIZER = transformers.DistilBertTokenizer.from_pretrained(MODEL_NAME, do_lower_case=True)
+    CODE_TOKENIZER = transformers.AutoTokenizer.from_pretrained("microsoft/codebert-base")
     scaler = GradScaler()
+    DEVICE="cpu"

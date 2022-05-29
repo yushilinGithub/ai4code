@@ -59,7 +59,7 @@ if __name__ == '__main__':
         print("\n[INFO] GPU not found. Using CPU: {}\n".format(platform.processor()))
         DEVICE = torch.device('cpu')
 
-
+    Config.DEVICE = torch.device('cpu')
     triplets,val_triplets,cell_id_to_source = ut.get_data()
     train_set = MarkdownDataset(triplets,cell_id_to_source)
     valid_set = MarkdownDataset(val_triplets,cell_id_to_source)
